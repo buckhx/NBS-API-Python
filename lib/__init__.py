@@ -1,0 +1,2 @@
+#from resource import Resource
+
