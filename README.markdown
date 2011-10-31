@@ -4,6 +4,7 @@
 ##Contributors:
 
 - Buck Heroux
+- Sean Smith
 
 Documentation should go here [markdown]
 An article for each public method
