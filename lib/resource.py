@@ -4,13 +4,12 @@ import inspect
 class Resource(object):
   base = ".api3.nextbigsound.com/"
 
-  def __init__(self,key):
+	# Constructor:
+	# 	Default value for ext is json
+	#		If xml is wanted it must be explicitly passed
+  def __init__(self, key, ext=".json"):
     self.key = key
-    self.ext = ".json"
-
-
-  def setXML(self):
-    self.ext = ".xml"
+    self.ext = ext
 
   def getArtists(self):
     return Artists(self.key)
