@@ -35,12 +35,3 @@ class Resource(object):
     resource = type(self).__name__
     method = inspect.stack()[1][3] 
     return ("http://" + self.key + Resource.base + resource + "/" + method + "/").lower()
-
-# Resources
-class Artists(Resource):
-
-  def view(self, id):
-    return self.get(self.genUrl()+id, "")
-
-class Genre(Resource):
-  pass
