@@ -5,6 +5,7 @@
 
 - Buck Heroux
 - Sean Smith
+- James B. Fitzgerald
 
 Documentation should go here [markdown]
 An article for each public method
