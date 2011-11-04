@@ -7,6 +7,7 @@
 - Sean Smith
 - James B. Fitzgerald
 - Omar Sulehria
+- Charles McClung
 
 Documentation should go here [markdown]
 An article for each public method
