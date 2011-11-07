@@ -12,7 +12,12 @@ def artist_view_test():
     print "Artist View Test: FAILED"
 
 def artist_search_test():
-  pass
+  api = API("nbsmobile");
+  resp = json.laods.(api.artistSearch("Kanye"))
+  if(resp["music_brainz_id"] == "164f0d73-1234-4e2c-8743-d77bf2191051"):
+    print "Artist Search Test: Passed"
+  else:
+    print "Artist Search Test: FAILED"
 
 def artist_ranking_test():
   pass
@@ -47,5 +52,6 @@ def services_list_test():
 print "Running Tests..."
 
 artist_view_test()
+artist_search_test()
 
 print "Tests finished"
