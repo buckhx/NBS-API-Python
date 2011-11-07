@@ -1,5 +1,7 @@
 import urllib as rest
 import inspect
+from lib.artists import Artists
+from lib.genre import Genre
 
 class Resource(object):
   base = ".api3.nextbigsound.com/"
@@ -11,7 +13,11 @@ class Resource(object):
     self.key = key
     self.ext = ext
 
-  def getArtists(self):
+  # Resource has an association with
+	# both Artists and Genre. 
+	# Genre and Artists inherit from Resource...
+
+	def getArtists(self):
     return Artists(self.key)
 
   def getGenre(self):
