@@ -9,5 +9,8 @@
 - Omar Sulehria
 - Charles McClung
 
+##Conventions
+- Use 2 spaces for indentation
+
 Documentation should go here [markdown]
 An article for each public method
