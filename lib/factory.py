@@ -1,5 +1,5 @@
 from artists import Artists
-from genre import Genre
+from genres import Genres
 
 class ResourceFactory:
   
