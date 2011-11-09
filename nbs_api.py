@@ -32,3 +32,24 @@ class API:
   def metricsProfile(self, id, opt=[]):
     return self.metrics().profile(id, opt)
 
+  def metricsArtist(self, id, opt=[]):
+    return self.metrics().artist(id, opt)
+
+  def profiles(self):
+    return self.factory.getProfiles()
+
+  def profilesArtist(self, id):
+    return self.profiles().artist(id)
+
+  def profilesSearch(self, url):
+    return self.profiles().search(url)
+
+  def profilesAdd(self, id, profiles):
+    return self.profiles().add(id, profiles)
+
+  def services(self):
+    return self.factory.getServices()
+
+  def servicesList(self):
+    return self.services().list()
+

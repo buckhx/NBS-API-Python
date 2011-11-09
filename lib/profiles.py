@@ -6,10 +6,10 @@ class Profiles(Resource):
     return self.get(self.genUrl( )+"/"+id, "")
 
   def search(self, url):
-    return self.get(self.genUrl( ), {'q':query})
+    return self.get(self.genUrl( ), {'u':url})
   
-  def add(self, profiles):
+  def add(self, id, profiles):
     data = {}
     data['profiles[]'] = '&&'.join(profiles)
     data['key'] = self.secret
-    return self.post(self.genUrl( ), data)
+    return self.post(self.genUrl( )+"/"+id, data)

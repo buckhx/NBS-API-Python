@@ -6,7 +6,11 @@ class Profiles(Resource):
     return self.get(self.genUrl( )+"/"+id, "")
 
   def search(self, url):
-    return self.get(self.genUrl( ), {'q':query})
+    return self.get(self.genUrl( ), {'u':url})
   
-  def add(self, profiles):
-    return self.post(self.genUrl( ), {'profiles':profiles, 'key':'ad644d582c7dcf7dc29479ff2d4df1ef'})
+  def add(self, id, profiles):
+    data = {}
+    data['profiles[]'] = '&&'.join(profiles)
+    data['key'] = self.secret
+    print repr(self.post(self.genUrl( )+"/"+id, data))
+    return self.post(self.genUrl( )+"/"+id, data)
