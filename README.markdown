@@ -8,6 +8,7 @@
 - James B. Fitzgerald
 - Omar Sulehria
 - Charles McClung
+- Michael Odbert
 
 ##Conventions
 - Use 2 spaces for indentation
