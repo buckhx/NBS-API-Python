@@ -16,7 +16,6 @@ class Metrics(Resource):
     if opt == []:
       return self.get(self.genUrl( )+"/"+id, "")
     else:
-      data = {}
       data['start'] = opt[0]
       data['end'] = opt[1]
       data['metric'] = opt[2]

@@ -10,8 +10,8 @@ class ResourceFactory:
   def getArtists(self):
     return Artists(self.key, self.ext)
 
-  def getGenres(self):
-    return Genres(self.key, self.ext)
+  def getGenre(self):
+    return Genre(self.key, self.ext)
 
   def getMetrics(self):
     return Metrics(self.key, self.ext)

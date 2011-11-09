@@ -32,7 +32,7 @@ class Resource:
   # Sean: Sometimes we do not want the generated url to end
   #   in a '/' because we may just want it to end in .json
   #   or .xml with the possibility of GET or POST variables
-  #   I chose to make the trailing '/' dependent on the
+  #   I chose to make the trailing '/' dependent to the
   #   calling Resource rather than this function. 
   def genUrl(self):
     resource = self.__class__.__name__

@@ -20,9 +20,9 @@ class API:
   def artistAdd(self,name, profiles):
     return self.artist().add(name, profiles)
 
-  def genres(self):
-    return self.factory.getGenres()
+  def genre(self):
+    return self.factory.getGenre()
 
-  def genresArtist(self):
-    return self.genres.artist( )
+  def genreArtist(self):
+    return self.genre.artist( )
 

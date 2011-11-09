@@ -16,7 +16,6 @@ class Artists(Resource):
     return self.get(self.genUrl( ) + "/" + type + "/" + uids, "")
 
   def add(self, name, profiles):
-    data = {}
     propost = ""
     for p in profiles:
       propost += p + ","
