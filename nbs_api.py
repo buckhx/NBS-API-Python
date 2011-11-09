@@ -2,8 +2,8 @@ from lib.factory import ResourceFactory
 
 class API:
 
-  def __init__(self,key,ext):
-    self.factory = ResourceFactory(key,ext)
+  def __init__(self,key,ext,secret):
+    self.factory = ResourceFactory(key,ext,secret)
 
   def artist(self):
     return self.factory.getArtists( )

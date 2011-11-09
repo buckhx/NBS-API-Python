@@ -2,7 +2,7 @@ from lib.factory import ResourceFactory
 
 class API:
 
-  def __init__(self,key,ext):
+  def __init__(self,key,ext,secret):
     self.factory = ResourceFactory(key,ext)
 
   def artist(self):
@@ -20,9 +20,9 @@ class API:
   def artistAdd(self,name, profiles):
     return self.artist().add(name, profiles)
 
-  def genre(self):
-    return self.factory.getGenre()
+  def genres(self):
+    return self.factory.getGenres()
 
-  def genreArtist(self):
-    return self.genre.artist( )
+  def genresArtist(self):
+    return self.genres.artist( )
 

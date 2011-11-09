@@ -17,13 +17,9 @@ class Artists(Resource):
 
   def add(self, name, profiles):
     data = {}
-    propost = ""
-    for p in profiles:
-      propost += p + ","
-    propost = propost[:-1] # Snips the trailing comma
-    print propost
     data['name'] = name
-    data['profiles'] = propost
-    data['key'] = 'ad644d582c7dcf7dc29479ff2d4df1ef'
+    data['profiles[]'] = '&&'.join(profiles)
+    data['key'] = self.secret
+    # print repr(self.post(self.genUrl( ), data))
     return self.post(self.genUrl( ), data)
 

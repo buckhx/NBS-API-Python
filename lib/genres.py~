@@ -1,6 +1,13 @@
 from resource import Resource
 
+<<<<<<< HEAD
 class Genres(Resource):
 
   def artist(self, id):
-    return self.get(self.genUrl( )+"/"id, "")
+    return self.get(self.genUrl( )+"/"+id, "")
+=======
+class Genres(Resource):  
+
+	def genreArtist(self, id):
+		return self.get(self.genUrl()+id, "")
+>>>>>>> 660c4500a54349da32eb9fa39ee95bcba9ae9fcf

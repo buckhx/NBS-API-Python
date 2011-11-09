@@ -5,9 +5,10 @@ class Resource:
   base = ".api3.nextbigsound.com/"
 
   # Constructor:
-  def __init__(self, key, ext):
+  def __init__(self, key, ext, secret):
     self.key = key
     self.ext = ext
+    self.secret = secret
 
   # HTTP GET
   def get(self,url,params):
@@ -32,7 +33,7 @@ class Resource:
   # Sean: Sometimes we do not want the generated url to end
   #   in a '/' because we may just want it to end in .json
   #   or .xml with the possibility of GET or POST variables
-  #   I chose to make the trailing '/' dependent to the
+  #   I chose to make the trailing '/' dependent on the
   #   calling Resource rather than this function. 
   def genUrl(self):
     resource = self.__class__.__name__

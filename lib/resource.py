@@ -5,9 +5,10 @@ class Resource:
   base = ".api3.nextbigsound.com/"
 
   # Constructor:
-  def __init__(self, key, ext):
+  def __init__(self, key, ext, secret):
     self.key = key
     self.ext = ext
+    self.secret = secret
 
   # HTTP GET
   def get(self,url,params):
@@ -23,8 +24,8 @@ class Resource:
   def post(self,url,data):
     url = url + self.ext
     data = rest.urlencode(data)
-    print repr(data)
-    print repr(rest.urlopen(url,data).geturl( ))
+    # print repr(data)
+    # print repr(rest.urlopen(url,data).geturl( ))
     return rest.urlopen(url,data).read()
 
   # generates url based on method called and resource used

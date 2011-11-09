@@ -9,4 +9,7 @@ class Profiles(Resource):
     return self.get(self.genUrl( ), {'q':query})
   
   def add(self, profiles):
-    return self.post(self.genUrl( ), {'profiles':profiles, 'key':'ad644d582c7dcf7dc29479ff2d4df1ef'})
+    data = {}
+    data['profiles[]'] = '&&'.join(profiles)
+    data['key'] = self.secret
+    return self.post(self.genUrl( ), data)
