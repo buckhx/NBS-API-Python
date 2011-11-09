@@ -1,4 +1,6 @@
 from resource import Resource
 
 class Genres(Resource):  
-	pass
+
+	def genreArtist(self, id):
+		return self.get(self.genUrl()+id, "")
