@@ -1,5 +1,8 @@
 from artists import Artists
 from genres import Genres
+from metrics import Metrics
+from profiles import Profiles
+from services import Services
 
 class ResourceFactory:
   

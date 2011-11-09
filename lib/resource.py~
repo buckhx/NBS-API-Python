@@ -24,8 +24,8 @@ class Resource:
   def post(self,url,data):
     url = url + self.ext
     data = rest.urlencode(data)
-    print repr(data)
-    print repr(rest.urlopen(url,data).geturl( ))
+    # print repr(data)
+    # print repr(rest.urlopen(url,data).geturl( ))
     return rest.urlopen(url,data).read()
 
   # generates url based on method called and resource used

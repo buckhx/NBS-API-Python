@@ -4,6 +4,7 @@ class Metrics(Resource):
 
   def profile(self, id, opt=[]):
     if opt == []:
+      # print repr(self.get(self.genUrl( )+"/"+id, ""))
       return self.get(self.genUrl( )+"/"+id, "")
     else:
       data = {}

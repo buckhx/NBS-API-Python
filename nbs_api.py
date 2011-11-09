@@ -23,6 +23,12 @@ class API:
   def genres(self):
     return self.factory.getGenres()
 
-  def genresArtist(self):
-    return self.genres.artist( )
+  def genresArtist(self,id):
+    return self.genres().artist(id)
+
+  def metrics(self):
+    return self.factory.getMetrics()
+
+  def metricsProfile(self, id, opt=[]):
+    return self.metrics().profile(id, opt)
 

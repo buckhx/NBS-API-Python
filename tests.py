@@ -40,10 +40,20 @@ def artist_add_test():
     print "Artist Add Test: FAILED"
 
 def genres_artist_test():
-  pass
+  api = API("nbsmobile",".json", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  resp = json.loads(api.genresArtist("356"))
+  if resp["2"]["name"] == "HipHop":
+    print "Genres Artist Test: Passed"
+  else:
+    print "Genres Artist Test: FAILED"
 
 def metrics_profile_test():
-  pass
+  api = API("nbsmobile",".json", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  resp = json.loads(api.metricsProfile("388"))
+  if resp["plays"]["15281"] == 308315571:
+    print "Metrics Profile Test: Passed"
+  else:
+    print "Metrics Profile Test: FAILED"
 
 def metrics_artist_test():
   pass
@@ -69,5 +79,7 @@ artist_view_test()
 artist_search_test()
 artist_ranking_test()
 artist_add_test()
+genres_artist_test()
+metrics_profile_test()
 
 print "Tests finished"

@@ -3,7 +3,7 @@ from lib.factory import ResourceFactory
 class API:
 
   def __init__(self,key,ext,secret):
-    self.factory = ResourceFactory(key,ext)
+    self.factory = ResourceFactory(key,ext,secret)
 
   def artist(self):
     return self.factory.getArtists( )
@@ -23,6 +23,12 @@ class API:
   def genres(self):
     return self.factory.getGenres()
 
-  def genresArtist(self):
-    return self.genres.artist( )
+  def genresArtist(self,id):
+    return self.genres().artist(id)
+
+  def metrics(self):
+    return self.factory.getMetrics()
+
+  def metricsProfile(self, id, opt=[]):
+    return self.metrics().profile(id,opt)
 

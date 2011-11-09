@@ -17,7 +17,7 @@ class Resource:
     else:
       q = "?"
     url = url + self.ext + q + rest.urlencode(params)
-    print repr(rest.urlopen(url).geturl( ))
+    #print repr(rest.urlopen(url).geturl( ))
     return rest.urlopen(url).read()
 
   # HTTP POST
