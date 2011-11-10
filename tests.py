@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-import tests_json as json
-import tests_xml as xml
+import tests.tests_json as json
+import tests.tests_xml as xml
 
 def run( ):
   print "*********[RUNNING TESTS]*********"
