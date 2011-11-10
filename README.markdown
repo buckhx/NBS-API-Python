@@ -27,7 +27,7 @@ An article for each public method
 > *query* is the artist's name
 
 *def rank(self, type, ids):
-   ids = ""    
+   ids = ""
    for i in ids:
      uids += str(i) + '-'
    uids = uids\[:-1]\
