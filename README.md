@@ -19,7 +19,7 @@ An article for each public method
 ## artists.py
 
 ###def view(self, id):
-###  return self.get(self.genUrl( )+"/"+id, "")
+###\t  return self.get(self.genUrl( )+"/"+id, "")
 
 > *id* is the artists id ex: Kanye West = 356
 
