@@ -2,8 +2,26 @@ from lib.factory import ResourceFactory
 
 class API:
 
-  def __init__(self,key,ext,secret):
-    self.factory = ResourceFactory(key,ext,secret)
+  def __init__(self, key, secret="", ext=".json"):
+    self.factory = ResourceFactory(key, secret, ext)
+  
+  def setKey(self, key):
+    self.factory.setKey(key)
+
+  def getKey(self):
+    return self.factory.getKey( )
+
+  def setSecret(self, secret):
+    self.factory.setSecret( )
+
+  def getSecret(self):
+    return self.factory.getSecret( )
+
+  def setExt(self, ext):
+    self.factory.setExt(ext)
+
+  def getExt(self):
+    return self.factory.getExt( )
 
   def artist(self):
     return self.factory.getArtists( )

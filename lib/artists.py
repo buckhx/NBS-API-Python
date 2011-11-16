@@ -16,10 +16,12 @@ class Artists(Resource):
     return self.get(self.genUrl( ) + "/" + type + "/" + uids, "")
 
   def add(self, name, profiles):
-    data = {}
-    data['name'] = name
-    data['profiles[]'] = '&&'.join(profiles)
-    data['key'] = self.secret
-    # print repr(self.post(self.genUrl( ), data))
-    return self.post(self.genUrl( ), data)
+    if (self.secret == ""):
+      raise Exception("A private key is needed")
+    else:
+      data = {}
+      data['name'] = name
+      data['profiles[]'] = '&&'.join(profiles)
+      data['key'] = self.secret
+      return self.post(self.genUrl( ), data)
 

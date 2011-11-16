@@ -10,7 +10,7 @@ total = 11
 def artist_view_test():
   global failed
   global passed
-  api = API("nbsmobile", ".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "", ".xml")
   resp = xml.dom.minidom.parseString(api.artistView("356"))
   music_id = resp.getElementsByTagName("music_brainz_id")[0].childNodes[0].data
   if(music_id == "164f0d73-1234-4e2c-8743-d77bf2191051"):
@@ -21,7 +21,7 @@ def artist_view_test():
 def artist_search_test():
   global failed
   global passed
-  api = API("nbsmobile", ".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "", ".xml")
   resp = xml.dom.minidom.parseString(api.artistSearch("Kanye"))
   music_id = resp.getElementsByTagName("music_brainz_id")[0].childNodes[0].data
   if(music_id == "164f0d73-1234-4e2c-8743-d77bf2191051"):
@@ -32,7 +32,7 @@ def artist_search_test():
 def artist_ranking_test():
   global failed
   global passed
-  api = API("nbsmobile", ".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "", ".xml")
   ids = [356, 659, 8309]
   type = "nominal"
   resp = xml.dom.minidom.parseString(api.artistRanking(type, ids))
@@ -48,7 +48,7 @@ def artist_ranking_test():
 def artist_add_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "ad644d582c7dcf7dc29479ff2d4df1ef", ".xml")
   profiles = ["http://www.myspace.com/longmiles"]
   name = "Long Miles"
   resp = xml.dom.minidom.parseString(api.artistAdd(name , profiles))
@@ -61,7 +61,7 @@ def artist_add_test():
 def genres_artist_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile","", ".xml")
   resp = xml.dom.minidom.parseString(api.genresArtist("356"))
   genre = resp.getElementsByTagName("name")[1].childNodes[0].data
   if(genre == "HipHop"):
@@ -72,10 +72,10 @@ def genres_artist_test():
 def metrics_profile_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "", ".xml")
   resp = xml.dom.minidom.parseString(api.metricsProfile("388"))
-  plays = resp.getElementsByTagName("value")[0].childNodes[0].data
-  if(plays == "308315571"):
+  metrics = len(resp.getElementsByTagName("metric"))
+  if(metrics==4):
     passed += 1
   else:
     failed.append("metrics_profile_test( )")
@@ -83,7 +83,7 @@ def metrics_profile_test():
 def metrics_artist_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile","", ".xml")
   resp = xml.dom.minidom.parseString(api.metricsArtist("388"))
   service = resp.getElementsByTagName("service")[0].childNodes[0].data
   if(service == "MySpace"):
@@ -94,7 +94,7 @@ def metrics_artist_test():
 def profiles_artist_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "", ".xml")
   resp = xml.dom.minidom.parseString(api.profilesArtist("356"))
   service = resp.getElementsByTagName("service")[9].childNodes[0].data
   if(service == "MySpace"):
@@ -105,7 +105,7 @@ def profiles_artist_test():
 def profiles_search_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile","", ".xml")
   resp = xml.dom.minidom.parseString(api.profilesSearch("http://www.myspace.com/kanyewest"))
   music_id = resp.getElementsByTagName("music_brainz_id")[0].childNodes[0].data
   if(music_id == "164f0d73-1234-4e2c-8743-d77bf2191051"):
@@ -116,7 +116,7 @@ def profiles_search_test():
 def profiles_add_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "ad644d582c7dcf7dc29479ff2d4df1ef", ".xml")
   profiles = ["http://www.myspace.com/longmiles"]
   resp = xml.dom.minidom.parseString(api.profilesAdd("324157", profiles))
   name = resp.getElementsByTagName("name")[0].childNodes[0].data
@@ -128,7 +128,7 @@ def profiles_add_test():
 def services_list_test():
   global failed
   global passed
-  api = API("nbsmobile",".xml", 'ad644d582c7dcf7dc29479ff2d4df1ef')
+  api = API("nbsmobile", "", ".xml")
   resp = xml.dom.minidom.parseString(api.servicesList())
   elements = resp.getElementsByTagName("name")
   names = []

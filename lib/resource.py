@@ -5,10 +5,10 @@ class Resource:
   base = ".api3.nextbigsound.com/"
 
   # Constructor:
-  def __init__(self, key, ext, secret):
+  def __init__(self, key, secret, ext):
     self.key = key
-    self.ext = ext
     self.secret = secret
+    self.ext = ext
 
   # HTTP GET
   def get(self,url,params):
